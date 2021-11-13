@@ -27,6 +27,7 @@ class Lista:
 
         self.tail.next = node
         node.prev = self.tail
+        self.tail = node
 
 
     def add(self, node):
@@ -41,6 +42,7 @@ class Lista:
             self.tail = node
             return
 
+        self.init.prev = node
         node.next = self.init
         self.init = node
 
@@ -56,9 +58,16 @@ class Lista:
 
 if __name__ == '__main__':
     lista = Lista()
+    lista.append(Node(x=65))
+    lista.add(Node(x=890))
     lista.add(Node(x=27))
     lista.add(Node(x=1))
+    lista.append(Node(x=7))
+    lista.add(Node(x=567))
     print(lista)
+    lista.add(Node(x=99))
     lista.append(Node(x=5))
     lista.append(Node(x=19))
+    lista.add(Node(x=78))
     print(lista)
+
